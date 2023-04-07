@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,12 +14,22 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
+
+    axios
+      .post(`http://localhost/restaurants2/api/users/index.php`, {
+        email,
+        password,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
-    <form className="login" onSubmit={onSubmit}>
+    <form className="login-page" onSubmit={onSubmit}>
       <div className="input-group">
         <label htmlFor="email">Email</label>
         <input
@@ -26,6 +37,7 @@ const Login = () => {
           name="email"
           onChange={handleEmailChange}
           value={email}
+          required
         />
       </div>
       <div className="input-group">
@@ -35,6 +47,7 @@ const Login = () => {
           name="password"
           onChange={handlePasswordChange}
           value={password}
+          required
         />
       </div>
       <input type="submit" />

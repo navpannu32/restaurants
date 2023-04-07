@@ -1,4 +1,4 @@
-.login {
+.login-page {
   width: 400px;
   height: 500px;
   padding: 20px;
@@ -10,16 +10,16 @@
   flex-direction: column;
   background-color: aliceblue;
 }
-.login .input-group {
+.login-page .input-group {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin: 40px 0;
 }
-.login .input-group label {
+.login-page .input-group label {
   font-size: 25px;
 }
-.login .input-group input {
+.login-page .input-group input {
   margin-left: 20px;
   border: none;
   outline: none;
@@ -28,7 +28,7 @@
   padding: 10px;
   border-radius: 10px;
 }
-.login input[type="submit"] {
+.login-page input[type="submit"] {
   border: none;
   outline: none;
   height: 40px;
