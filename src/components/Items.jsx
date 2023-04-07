@@ -7,7 +7,7 @@ const Items = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost/restaurants2/api/items/index.php`, {
+      .get(`http://localhost/restaurants2/api/items/getItems.php`, {
         headers: {
           cors: "no-cors",
           "Content-Type": "application/json",
